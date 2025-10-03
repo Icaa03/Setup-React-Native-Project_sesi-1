@@ -16,7 +16,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.judul}>Kalkulator Luas Persegi</Text>
+      <Text style={styles.judul}>📐 Kalkulator Luas Persegi</Text>
+
+      <View style={styles.squareBox}>
+        <Text style={styles.squareText}>Persegi</Text>
+      </View>
 
       <TextInput
         style={styles.input}
@@ -31,7 +35,7 @@ export default function App() {
       </TouchableOpacity>
 
       {hasil !== null && (
-        <Text style={styles.hasil}>Luas Persegi: {hasil}</Text>
+        <Text style={styles.hasil}>Luas: {hasil}</Text>
       )}
     </View>
   );
@@ -40,22 +44,39 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#e3f2fd",
     alignItems: "center",
     justifyContent: "center",
     padding: 20,
   },
   judul: {
-    fontSize: 24,
+    fontSize: 26,
     fontWeight: "bold",
-    marginBottom: 20,
-    color: "#333",
+    marginBottom: 30,
+    color: "#1565c0",
+  },
+  squareBox: {
+    width: 120,
+    height: 120,
+    backgroundColor: "#64b5f6",
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 3,
+    borderColor: "#1565c0",
+    marginBottom: 25,
+    borderRadius: 12,
+    elevation: 6, // shadow untuk Android
+  },
+  squareText: {
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "bold",
   },
   input: {
     width: "80%",
     height: 50,
     borderWidth: 1,
-    borderColor: "#007bff",
+    borderColor: "#1565c0",
     borderRadius: 10,
     paddingHorizontal: 15,
     fontSize: 18,
@@ -63,10 +84,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   tombol: {
-    backgroundColor: "#ff4081",
+    backgroundColor: "#1565c0",
     paddingVertical: 12,
     paddingHorizontal: 25,
     borderRadius: 10,
+    marginBottom: 20,
+    elevation: 4,
   },
   textTombol: {
     color: "#fff",
